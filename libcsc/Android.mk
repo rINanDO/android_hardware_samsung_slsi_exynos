@@ -9,6 +9,9 @@ LOCAL_SRC_FILES := \
 
 LOCAL_C_INCLUDES := \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
+	$(TOP)/system/core/libcutils/include \
+	$(TOP)/system/core/libutils/include \
+	$(TOP)/system/core/libsystem/include \
 	hardware/samsung_slsi/$(TARGET_BOARD_PLATFORM)/include \
 	$(LOCAL_PATH)/../include \
 	$(LOCAL_PATH)/../libexynosutils
@@ -21,6 +24,7 @@ LOCAL_EXPORT_C_INCLUDE_DIRS := $(LOCAL_PATH)
 LOCAL_CFLAGS :=
 
 LOCAL_MODULE := libcsc
+LOCAL_PROPRIETARY_MODULE := true
 
 LOCAL_PRELINK_MODULE := false
 

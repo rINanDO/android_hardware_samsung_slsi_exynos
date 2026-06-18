@@ -9,6 +9,8 @@ LOCAL_SRC_FILES := \
 
 LOCAL_C_INCLUDES := \
 	$(LOCAL_PATH)/include \
+	$(TOP)/system/core/libutils/include \
+	$(TOP)/system/logging/liblog/include \
 	$(TOP)/hardware/samsung_slsi/exynos/include \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_BOARD_PLATFORM)/include \
 	$(TOP)/system/core/libion/include
@@ -77,6 +79,7 @@ LOCAL_SHARED_LIBRARIES = libion
 
 LOCAL_MODULE := libExynosVideoApi
 LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_PRELINK_MODULE := false
 LOCAL_ARM_MODE := arm
 

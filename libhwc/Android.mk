@@ -96,6 +96,9 @@ LOCAL_CFLAGS += -DHLOG_CODE=0
 
 LOCAL_C_INCLUDES += \
 	$(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include \
+	$(TOP)/hardware/google/gfxstream/third_party/opengl/include \
+	$(TOP)/hardware/libhardware/include \
+	$(TOP)/hardware/libhardware_legacy/include/ \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_SOC)/include \
 	$(TOP)/hardware/samsung_slsi/$(TARGET_BOARD_PLATFORM)/include \
 	$(LOCAL_PATH)/../include \
@@ -121,6 +124,7 @@ LOCAL_SRC_FILES := ExynosHWC.cpp
 
 LOCAL_MODULE := hwcomposer.$(TARGET_BOARD_PLATFORM)
 LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)

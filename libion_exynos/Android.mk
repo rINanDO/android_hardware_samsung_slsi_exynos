@@ -15,7 +15,10 @@
 LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
-LOCAL_C_INCLUDES += $(LOCAL_PATH)/../include
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/../include \
+	$(TOP)/system/logging/liblog/include \
+	$(TOP)/system/core/libcutils/include \
+	$(TOP)/system/core/libutils/include
 
 LOCAL_SRC_FILES:= \
 	libion.cpp
@@ -23,6 +26,7 @@ LOCAL_SRC_FILES:= \
 LOCAL_MODULE := libion_exynos
 
 LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
 
 include $(TOP)/hardware/samsung_slsi/exynos/BoardConfigCFlags.mk
 include $(BUILD_SHARED_LIBRARY)
